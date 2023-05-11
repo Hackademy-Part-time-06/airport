@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FlyController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[FlyController::class, 'homepage'])->name('homepage');
