@@ -15,4 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',[FlyController::class, 'homepage'])->name('homepage');
-Route::get('/detailfly',[FlyController::class, 'datailfly'])->name('detailfly');
+Route::get('/detailfly',[FlyController::class, 'detailfly'])->name('detailfly');

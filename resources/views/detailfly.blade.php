@@ -46,14 +46,23 @@
   </div>
 </nav>
 
-<div class="card">
+
+<div class="card" style="width: 18rem;">
+  @foreach ($dettagli['departure'] as $dettaglio )
+  <img class="card-img-top" src="{{$dettaglio['cover']}}" alt="Card image cap">
   <div class="card-body">
-    
+    <h5 class="card-title">{{$dettaglio['company']}}</h5>
+    <p class="card-text">{{$dettaglio['city']}}</p>
+    <p class="card-text">gate: {{$dettaglio['gate']}}</p>
+  <p class="card-text">posti totali: {{$dettaglio['seats']['total']}}</p>
+<p class="card-text">posti occupati: {{$dettaglio['seats']['occupied']}}</p>
   </div>
+   @endforeach 
 </div>
 
 
 
-<div class="container">
-    <header></header>
-</div>
+
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  </body>
+</html>

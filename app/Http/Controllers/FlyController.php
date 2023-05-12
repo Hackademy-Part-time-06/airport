@@ -80,11 +80,9 @@ class FlyController extends Controller
         }
 
        public function detailfly(){
-        
-
-
-        return view('detailfly',['dettagli'=>self::$flights]);
-    }
+         return view('detailfly',['dettagli'=>self::$flights]);
+    
+        }
 
 
 
