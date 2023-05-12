@@ -6,11 +6,7 @@ use Illuminate\Http\Request;
 
 class FlyController extends Controller
 {
-    public function homepage(){
-    
-    
-    
-$flights = [
+    public static $flights = [
     "departure" => [
         [
             "id" => 29,
@@ -77,22 +73,24 @@ $flights = [
     ],
 ];
 
-
-        return view ('homepage',['voli'=>$flights]);
+    public function homepage(){
     
-        
-
+    return view ('homepage',['flights'=>self::$flights]);
     
-    }
+        }
 
        public function detailfly(){
         
 
 
-        return view('detailfly',);
+        return view('detailfly',['dettagli'=>self::$flights]);
     }
+
+
 
 
    
 
-            }
+    
+}           
+

@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-<style type="text/css">
-body { background-image: url(/immagini/sfondo.jpg);height: 100}
 
-</style> 
+<body style="background-color: rgba(1, 1, 184, 0.84)">
+
 </head>
   <body > 
 
@@ -66,7 +65,7 @@ body { background-image: url(/immagini/sfondo.jpg);height: 100}
  <div class="container">
         <div class="card border-0 shadow my-5"">
             <div class="card-body p-5">
-                <h1 class="fw-light"><img class="position-absolute top-0 start-50 translate-middle-x" src="/immagini/redblui.png" alt=""></h1>
+                <h1 class="fw-light"><img class="position-absolute top-0 start-50 translate-middle-x" style="width: 10%" src="/immagini/redblui.png" alt=""></h1>
                 <div class="row">
                     <div class="col-6">
                         <h2 class="text-center">PARTENZE</h2>
@@ -78,18 +77,22 @@ body { background-image: url(/immagini/sfondo.jpg);height: 100}
                                     <th scope="col">DESTINAZIONE</th>
                                     <th scope="col">ORARIO</th>
                                     <th scope="col">GATE</th>
-                                    <th scope="col">INFO</th>
+                                    <th scope="col">NOTE</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($voli['departure'] as $volo)
+                                @foreach ($flights['departure'] as $volo)
                                     <tr>
                                         <th scope="row">{{ $volo['company'] }}</th>
                                         <td>{{ $volo['id'] }}</td>
                                         <td>{{ $volo['city'] }}</td>
                                         <td>{{ $volo['time'] }}</td>
                                         <td>{{ $volo['gate'] }}</td>
-                                        <td><i class="bi bi-info-circle-fill"></i></td>
+                                        <td><a href="{{route('detailfly')}}"> <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
+  
+                                          <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+</svg></a></td>
+                                        
                                     </tr>
                                 @endforeach
                             </tbody>
@@ -102,21 +105,23 @@ body { background-image: url(/immagini/sfondo.jpg);height: 100}
                                 <tr>
                                     <th scope="col">COMPAGNIA</th>
                                     <th scope="col">VOLO</th>
-                                    <th scope="col">DESTINAZIONE</th>
+                                    <th scope="col">PROVENIENZA</th>
                                     <th scope="col">ORARIO</th>
                                     <th scope="col">GATE</th>
-                                    <th scope="col">INFO</th>
+                                    <th scope="col">NOTE</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($voli['arrival'] as $volo)
+                                @foreach ($flights['arrival'] as $volo)
                                     <tr>
                                         <th scope="row">{{ $volo['company'] }}</th>
                                         <td>{{ $volo['id'] }}</td>
                                         <td>{{ $volo['city'] }}</td>
                                         <td>{{ $volo['time'] }}</td>
                                         <td>{{ $volo['gate'] }}</td>
-                                        <td><i class="bi bi-info-circle-fill"></i></td>
+                                        <td><a href="{{route('detailfly')}}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
+  <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+</svg></a></td>
                                     </tr>
                                 @endforeach
                             </tbody>
