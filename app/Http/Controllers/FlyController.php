@@ -75,13 +75,23 @@ class FlyController extends Controller
 
     public function homepage(){
     
-    return view ('homepage',['flights'=>self::$flights]);
+    return view ('homepage',['voli'=>self::$flights]);
     
         }
 
-       public function detailfly(){
-         return view('detailfly',['dettagli'=>self::$flights]);
+       public function detailfly($id){
+        foreach(self::$flights['departure'] as $flight){
+            if($flight['id']==$id){
+                return view('detailfly',['voli'=>$flight]);
+            }
+        }
+         foreach(self::$flights['arrival'] as $flight){
+            if($flight['id']==$id){
+                return view('detailfly',['voli'=>$flight]);
+            }
+        }
     
+        abort(404);
         }
 
 

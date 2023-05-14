@@ -11,58 +11,26 @@
   <body > 
 
     <!--navbar-->
-   
-    <nav class="navbar navbar-expand-lg navbar-primary-subtle bg-primary static-top">
-  <div class="container">
-    <a class="navbar-brand" href="#">
-      <img src="/immagini/logoa.jpg" alt="..." class="rounded float-start" height="36">
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{{route('homepage')}}">Home</a>  <!--IMPORTANTE-->
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+   <x-navbar/>
+    
 
 
 <div class="card" style="width: 18rem;">
-  @foreach ($dettagli['departure'] as $dettaglio )
-  <img class="card-img-top" src="{{$dettaglio['cover']}}" alt="Card image cap">
+  
+  <img class="card-img-top" src="{{$voli['cover']}}" alt="Card image cap">
   <div class="card-body">
-    <h5 class="card-title">{{$dettaglio['company']}}</h5>
-    <p class="card-text">{{$dettaglio['city']}}</p>
-    <p class="card-text">gate: {{$dettaglio['gate']}}</p>
-  <p class="card-text">posti totali: {{$dettaglio['seats']['total']}}</p>
-<p class="card-text">posti occupati: {{$dettaglio['seats']['occupied']}}</p>
+    <h5 class="card-title">{{$voli['company']}}</h5>
+    <p class="card-text">{{$voli['city']}}</p>
+    <p class="card-text">gate: {{$voli['gate']}}</p>
+  <p class="card-text">posti totali: {{$voli['seats']['total']}}</p>
+<p class="card-text">posti occupati: {{$voli['seats']['occupied']}}</p>
   </div>
-   @endforeach 
+    
 </div>
 
 
 
-
+<x-footer/>
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
   </body>
 </html>
